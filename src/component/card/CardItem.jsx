@@ -1,36 +1,40 @@
-//import something from"../../assets/images/IMG_20251127_193215_756.webp";
+//import something from '../..assets/images/images.webp';
 import classes from './CardItem.module.css';
+import Card from './card';
 
-export default function CardItem() {
+
+export default function CardItem(props) {
+  
   return (
-    <div className={classes.card}>
+    <Card>
       <div className={classes.header}>
-        <img className={classes.avatar} src=""alt="profile avatar" />
+        <img className={classes.avatar} src="" alt="profile avatar" />
 
         <div className={classes.userInfo}>
-          <h2 className={classes.name}>John Doe</h2>
-          <p className={classes.role}>Frontend developer</p>
+          <h2 className={classes.name}>{props.name}</h2>
+          <p className={classes.role}>{props.role}</p>
         </div>
       </div>
 
       <div className={classes.details}>
         <div className={classes.detailItem}>
           <span className={classes.label}>Email:</span>
-          <span>john@example.com</span>
+          <span>{props.email}</span>
         </div>
 
         <div className={classes.detailItem}>
           <span className={classes.label}>Location:</span>
-          <span>Kathmandu, Nepal</span>
+          <span>{props.location}</span>
         </div>
 
         <div className={classes.detailItem}>
           <span className={classes.label}>Experience:</span>
-          <span>3 Years</span>
+          <span>{props.experience}</span>
         </div>
       </div>
 
       <button className={classes.button}>View More</button>
-    </div>
+    </Card>
   );
 }
+
